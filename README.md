@@ -5,3 +5,21 @@ A distributed system in Go exploring distributed architecture, practices and wor
 - The transport layer is standard HTTP and JSON as protocol.
 - Gradebook is a practice system which explores distributed architecture rather than creating the most efficient end-product.
 - It helps me understand how distributed systems work, how all the services interact, and how to trace/log the services using tools.
+
+
+                                                      _____________________________________________________
+                                                     |                                                     |
+                                                     |                                                     v
+                                                     |                                                -----------
+                                                     |                    ------------------          |   Log   |<--|
+                                                     |                    |                | <------> | Service |   |
+                ---------------           ----------------------          |    Service     |          -----------   |
+                |   Client    | <-------> |   Teacher Portal   | <------> |   Registery    |                        |
+                ---------------           ----------------------          |     (Hub)      |          -----------   |
+                                                     |                    |                | <------> | Grading |___|
+                                                     |                    ------------------          | Service |
+                                                     |                                                -----------
+                                                     |                                                     ^
+                                                     |                                                     |
+                                                     |_____________________________________________________|
+                                  
